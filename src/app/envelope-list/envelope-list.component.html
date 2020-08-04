@@ -1,0 +1,25 @@
+<mat-selection-list #envelopeList [multiple]="false">
+
+    <mat-list-option *ngFor="let envelope of envelopes" [value]="envelope" (click)="onSelected()">
+
+        <div class="envelope__vert-space" matLine></div>
+
+        <div matLine>
+            <div class="envelope__headings">
+                <div class="envelope__name">{{envelope.name}}</div>
+                <div class="envelope__flex-expander"></div>
+                <div class="envelope__amt--used">${{envelope.amtUsed}}</div>
+                <div class="envelope__slash">/</div>
+                <div class="envelope__amt--budgeted">${{envelope.amtBudgeted}}</div>
+            </div>
+        </div>
+
+        <div matLine>
+            <mat-progress-bar mode="determinate" [value]="(envelope.amtUsed/envelope.amtBudgeted)*100"></mat-progress-bar>
+        </div>
+
+        <div class="envelope__vert-space" matLine></div>
+
+    </mat-list-option>
+
+</mat-selection-list>
