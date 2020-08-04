@@ -17,14 +17,19 @@
     flex-grow: 1;
 }
 
-.envelope__amt--used {
-    margin-right: 1rem;
-}
+/* .envelope__amt {
 
-.envelope__slash {
+} */
+
+.envelope__amt--spent {
     margin-right: 1rem;
 }
 
 /* .envelope__amt--budgeted {
 
 } */
+
+.envelope__slash {
+    margin-right: 1rem;
+}
+
