@@ -1,0 +1,12 @@
+.envelope-details__panel {
+    text-align: left;
+}
+
+.envelope-details > .envelope-details__panel:first-child {
+    margin-top: 8px;
+}
+
+.envelope-details__amt-field {
+    margin-right: 2rem;
+}
+

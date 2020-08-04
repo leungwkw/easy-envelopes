@@ -1,1 +1,71 @@
-<p>Amt spent: ${{envelope.amtSpent}}</p>
+<mat-accordion class="envelope-details">
+<mat-expansion-panel class="envelope-details__panel">
+
+    <mat-expansion-panel-header>
+        <mat-panel-title>Spend</mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-form-field class="envelope-details__amt-field">
+        <mat-label>Amount</mat-label>
+        <span matPrefix>$&nbsp;</span>
+        <input matInput #spendAmt placeholder="0.00">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Add a note</mat-label>
+        <input matInput #spendNote maxlength="30" placeholder="Eg. lunch">
+        <mat-hint align="start"><strong>Optional</strong> </mat-hint>
+        <mat-hint align="end">{{spendNote.value.length}} / 30</mat-hint>
+    </mat-form-field>
+
+    <mat-action-row>
+        <button mat-button (click)="spendAmt.value=''; spendNote.value=''" [disabled]="(spendAmt.value.length==0) && (spendNote.value.length==0)">Clear</button>
+        <button mat-button color="primary" [disabled]="spendAmt.value.length==0">Spend</button>
+    </mat-action-row>
+
+</mat-expansion-panel>
+
+<mat-expansion-panel class="envelope-details__panel">
+
+    <mat-expansion-panel-header>
+        <mat-panel-title>Add</mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-form-field class="envelope-details__amt-field">
+        <mat-label>Amount</mat-label>
+        <span matPrefix>$&nbsp;</span>
+        <input matInput #addAmt placeholder="0.00">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Add a note</mat-label>
+        <input matInput #addNote maxlength="30" placeholder="Eg. From June paycheck">
+        <mat-hint align="start"><strong>Optional</strong> </mat-hint>
+        <mat-hint align="end">{{addNote.value.length}} / 30</mat-hint>
+    </mat-form-field>
+
+    <mat-action-row>
+        <button mat-button (click)="addAmt.value=''; addNote.value=''" [disabled]="(addAmt.value.length==0) && (addNote.value.length==0)">Clear</button>
+        <button mat-button color="primary" [disabled]="addAmt.value.length==0">Add</button>
+    </mat-action-row>
+</mat-expansion-panel>
+
+<mat-expansion-panel class="envelope-details__panel">
+    <mat-expansion-panel-header>
+    <mat-panel-title>
+        Details
+    </mat-panel-title>
+    <!-- <mat-panel-description>
+        Inform the date you wish to travel
+        <mat-icon>date_range</mat-icon>
+    </mat-panel-description> -->
+    </mat-expansion-panel-header>
+
+    <!-- <mat-form-field> -->
+    <!-- <mat-label>Date</mat-label> -->
+    <!-- <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly> -->
+    <!-- </mat-form-field> -->
+    <!-- <mat-datepicker #picker></mat-datepicker> -->
+</mat-expansion-panel>
+</mat-accordion>
+  
