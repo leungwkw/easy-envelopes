@@ -6,8 +6,9 @@
             <mat-card class="dashboard-card">
 
                 <mat-card-header>
-                    <mat-card-title>
-                        {{card.title}}
+                    <mat-card-title [ngSwitch]="cardIndex">
+                        <span *ngSwitchCase="1">{{selectedEnvelope.name}} Envelope</span>
+                        <span *ngSwitchDefault>{{card.title}}</span>
                         <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
                             <mat-icon>more_vert</mat-icon>
                         </button>
@@ -21,7 +22,7 @@
                 <mat-card-content class="dashboard-card-content">
                     <div [ngSwitch]="cardIndex">
                         <app-envelope-list *ngSwitchCase="0" [envelopes]="envelopes" (envelopeSelected)="onEnvelopeSelected($event)"></app-envelope-list>
-                        <div *ngSwitchDefault>{{card.title}}</div>
+                        <app-envelope-details *ngSwitchCase="1" [envelope]="selectedEnvelope">{{card.title}}</app-envelope-details>
                     </div>
                 </mat-card-content>
 

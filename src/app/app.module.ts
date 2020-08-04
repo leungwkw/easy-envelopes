@@ -17,12 +17,14 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatListModule } from '@angular/material/list';
 import { EnvelopeListComponent } from './envelope-list/envelope-list.component';
+import { EnvelopeDetailsComponent } from './envelope-details/envelope-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    EnvelopeListComponent
+    EnvelopeListComponent,
+    EnvelopeDetailsComponent
   ],
   imports: [
     BrowserModule,

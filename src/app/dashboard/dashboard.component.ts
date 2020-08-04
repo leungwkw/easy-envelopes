@@ -35,12 +35,14 @@ export class DashboardComponent {
         { name: "Rent & Utilities", amtUsed: 899, amtBudgeted: 1000 },
     ]
 
+    selectedEnvelope: Envelope = this.envelopes[0];
+
     constructor(
         private breakpointObserver: BreakpointObserver
         ) {}
 
-    onEnvelopeSelected($event) {
-        window.alert($event.selectedEnvelope.name + " selected!");
+    onEnvelopeSelected($event: { selectedEnvelope: Envelope; }) {
+        this.selectedEnvelope = $event.selectedEnvelope;
     }
 
 }
