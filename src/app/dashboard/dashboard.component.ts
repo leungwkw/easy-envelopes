@@ -30,9 +30,9 @@ export class DashboardComponent {
     );
 
     envelopes: Envelope[] = [
-        { name: "Groceries", amtUsed: 170, amtBudgeted: 300 },
-        { name: "Recreation", amtUsed: 187, amtBudgeted: 300 },
-        { name: "Rent & Utilities", amtUsed: 899, amtBudgeted: 1000 },
+        { name: "Groceries", amtSpent: 170, amtAdded: 300 },
+        { name: "Recreation", amtSpent: 187, amtAdded: 300 },
+        { name: "Rent & Utilities", amtSpent: 899, amtAdded: 1000 },
     ]
 
     selectedEnvelope: Envelope = this.envelopes[0];

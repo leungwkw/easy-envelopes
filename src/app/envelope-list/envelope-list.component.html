@@ -8,14 +8,14 @@
             <div class="envelope__headings">
                 <div class="envelope__name">{{envelope.name}}</div>
                 <div class="envelope__flex-expander"></div>
-                <div class="envelope__amt--used">${{envelope.amtUsed}}</div>
+                <div class="envelope__amt--used">${{envelope.amtSpent}}</div>
                 <div class="envelope__slash">/</div>
-                <div class="envelope__amt--budgeted">${{envelope.amtBudgeted}}</div>
+                <div class="envelope__amt--budgeted">${{envelope.amtAdded}}</div>
             </div>
         </div>
 
         <div matLine>
-            <mat-progress-bar mode="determinate" [value]="(envelope.amtUsed/envelope.amtBudgeted)*100"></mat-progress-bar>
+            <mat-progress-bar mode="determinate" [value]="(envelope.amtSpent/envelope.amtAdded)*100"></mat-progress-bar>
         </div>
 
         <div class="envelope__vert-space" matLine></div>
